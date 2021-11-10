@@ -9,6 +9,8 @@ const peopleSchema =new dynamoose.Schema({
     'role': String
 });
 
+const peopleTable = dynamoose.model('people', peopleSchema)
+
 
 try {
     data = await peopleSchema.scan().exec();
