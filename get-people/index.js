@@ -10,6 +10,8 @@ const peopleSchema =new dynamoose.Schema({
 
 const peopleTable = dynamoose.model('people', peopleSchema);
 
+let data = null;
+let status = 500;
 
 try {
     data = await peopleTable.scan().exec();
